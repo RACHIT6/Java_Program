@@ -120,6 +120,30 @@ class LinkedList{
         this.next = null;
         return prev;
     }
+
+    public int Size (){
+        LinkedList head = this;
+        int count = 0;
+        while (head != null){
+            head = head.next;
+            count++;
+        }
+
+        return count;
+    }
+
+//    Turtle Hair Approach to find Middle element of LinkedList
+    public LinkedList Mid (){
+        LinkedList slowNode = this;
+        LinkedList fastNode = this;
+
+        while (fastNode.next != null && fastNode.next.next != null){
+            slowNode = slowNode.next;
+            fastNode = fastNode.next.next;
+        }
+
+        return slowNode;
+    }
 }
 
 public class Singlee_Linked_List {
@@ -141,8 +165,10 @@ public class Singlee_Linked_List {
 //        head = head.DeleteNode(4);
 //        head.print();
 
+
         head.Print();
-        head = head.pop();
-        head.Print();
+        System.out.println(head.Size());
+//        head = head.pop();
+//        head.Print();
     }
 }
