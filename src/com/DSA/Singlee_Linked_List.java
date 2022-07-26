@@ -144,6 +144,26 @@ class LinkedList{
 
         return slowNode;
     }
+
+    public Boolean isPalindrome (){
+        if (this.next == null || this == null){
+            return true;
+        }
+
+        LinkedList FirstHalfStart = this;
+        LinkedList SecondHalfStart = this.Mid().next.Reverse();
+
+        while (SecondHalfStart != null){
+            if (FirstHalfStart.data != SecondHalfStart.data){
+                return false;
+            }
+
+            FirstHalfStart = FirstHalfStart.next;
+            SecondHalfStart = SecondHalfStart.next;
+        }
+
+        return true;
+    }
 }
 
 public class Singlee_Linked_List {
