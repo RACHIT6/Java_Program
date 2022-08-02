@@ -3,7 +3,7 @@ package com.DSA;
 public class Find_LinkedList_is_Palindrome_or_not {
 
 //    Using String concatination
-    public static Boolean isPalindrome (LinkedList head){
+    public static Boolean isPalindrome (linkedList head){
         String test = "";
 
         while (head != null){
@@ -22,9 +22,9 @@ public class Find_LinkedList_is_Palindrome_or_not {
     }
 
 //    Using rabbit and hare approach.
-    public static Boolean isPalindromeModifies (LinkedList head){
-        LinkedList FirstHalf = head;
-        LinkedList SecondHalfReverse = head.Mid().next.Reverse();
+    public static Boolean isPalindromeModifies (linkedList head){
+        linkedList FirstHalf = head;
+        linkedList SecondHalfReverse = head.Mid().next.Reverse();
 
         while (SecondHalfReverse != null){
             if (FirstHalf.data != SecondHalfReverse.data){
@@ -39,11 +39,11 @@ public class Find_LinkedList_is_Palindrome_or_not {
     }
 
     public static void main(String[] args) {
-        LinkedList Head = new LinkedList(1);
-        LinkedList n2 = new LinkedList(2);
-        LinkedList n3 = new LinkedList(56);
-        LinkedList n4 = new LinkedList(2);
-        LinkedList n5 = new LinkedList(1);
+        linkedList Head = new linkedList(1);
+        linkedList n2 = new linkedList(2);
+        linkedList n3 = new linkedList(56);
+        linkedList n4 = new linkedList(2);
+        linkedList n5 = new linkedList(1);
 
         Head.next = n2;
         n2.next = n3;

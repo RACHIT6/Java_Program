@@ -1,10 +1,10 @@
 package com.DSA;
 
-//    Program to check a loop in LinkedList
+//    Program to check a loop in linkedList
 public class Check_loop_in_LinkedList {
-    public static Boolean CheckLoop (LinkedList head){
-        LinkedList slow = head;
-        LinkedList fast = head;
+    public static Boolean CheckLoop (linkedList head){
+        linkedList slow = head;
+        linkedList fast = head;
 
         while (fast != null && fast.next != null){
             slow = slow.next;
@@ -19,11 +19,11 @@ public class Check_loop_in_LinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedList Head = new LinkedList(1);
-        LinkedList n2 = new LinkedList(2);
-        LinkedList n3 = new LinkedList(56);
-        LinkedList n4 = new LinkedList(2);
-        LinkedList n5 = new LinkedList(1);
+        linkedList Head = new linkedList(1);
+        linkedList n2 = new linkedList(2);
+        linkedList n3 = new linkedList(56);
+        linkedList n4 = new linkedList(2);
+        linkedList n5 = new linkedList(1);
 
         Head.next = n2;
         n2.next = n3;

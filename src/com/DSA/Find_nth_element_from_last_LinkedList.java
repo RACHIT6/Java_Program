@@ -1,7 +1,7 @@
 package com.DSA;
     // Program to find nth term form last and delete it.
 public class Find_nth_element_from_last_LinkedList {
-    public static int sizeLinkedList (LinkedList head){
+    public static int sizelinkedList (linkedList head){
         int count = 0;
         while (head != null){
             count++;
@@ -11,10 +11,10 @@ public class Find_nth_element_from_last_LinkedList {
         return count;
     }
 
-    public static LinkedList nthLast (LinkedList head, int index){
-        int size = sizeLinkedList(head);
-        LinkedList prevNode = head;
-        LinkedList nextNode = prevNode.next;
+    public static linkedList nthLast (linkedList head, int index){
+        int size = sizelinkedList(head);
+        linkedList prevNode = head;
+        linkedList nextNode = prevNode.next;
         int count = 0;
 
         if (index >= size - 1){
@@ -34,11 +34,11 @@ public class Find_nth_element_from_last_LinkedList {
     }
 
     public static void main(String[] args) {
-        LinkedList Head = new LinkedList(1);
-        LinkedList n2 = new LinkedList(2);
-        LinkedList n3 = new LinkedList(3);
-        LinkedList n4 = new LinkedList(4);
-        LinkedList n5 = new LinkedList(5);
+        linkedList Head = new linkedList(1);
+        linkedList n2 = new linkedList(2);
+        linkedList n3 = new linkedList(3);
+        linkedList n4 = new linkedList(4);
+        linkedList n5 = new linkedList(5);
 
         Head.next = n2;
         n2.next = n3;
@@ -46,10 +46,10 @@ public class Find_nth_element_from_last_LinkedList {
         n4.next = n5;
         n5.next = null;
 
-//        Head.Print();
+        Head.Print();
+        Head = nthLast(Head, 2);
 //        Head = nthLast(Head, 2);
 //        Head = nthLast(Head, 2);
-//        Head = nthLast(Head, 2);
-//        Head.Print();
+        Head.Print();
     }
 }
