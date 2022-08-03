@@ -130,12 +130,30 @@ public class Sorting_Algorithms {
 
     public static void countSort (int [] arr){
         int max = maxElement(arr);
+        int [] entry = new int[max + 1];
 
+//        Marking value of arr as index
+        for (int element: arr){
+            entry[element] += 1;
+        }
+
+        int i = 0, j = 0;
+        while (i <= max){
+            if (entry[i] > 0){
+                arr[j] = i;
+                entry[i]--;
+                j++;
+            }
+
+            else {
+                i++;
+            }
+        }
     }
 
     public static void main(String[] args) {
         int [] arr = {6, 9, 1, 4, 6, 4, 14, 4, 15, 6};
-        quickSort(arr, 0, arr.length - 1);
+        countSort(arr);
 //        int [] arr1 = mergeSort(arr, new int[]{2, 4, 16});
         System.out.println(Arrays.toString(arr));
     }
