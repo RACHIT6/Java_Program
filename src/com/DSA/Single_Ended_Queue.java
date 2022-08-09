@@ -1,12 +1,12 @@
 package com.DSA;
 
-class Queue{
+class queue{
     int size;
     int r;
     int f;
     int [] arr;
 
-    Queue (int size){
+    queue (int size){
         this.size = size;
         this.r = this.f = -1;
         this.arr = new int[this.size];
@@ -20,9 +20,9 @@ class Queue{
         return this.f >= this.size - 1;
     }
 
-    public void enQueue (int val){
+    public void enqueue (int val){
         if (isFull()){
-            System.out.println("Queue Overflow");
+            System.out.println("queue Overflow");
         }
 
         else {
@@ -31,10 +31,10 @@ class Queue{
         }
     }
 
-    public int deQueue (){
+    public int dequeue (){
         int item = -1;
         if (isEmpty()){
-            System.out.println("Queue Underflow");
+            System.out.println("queue Underflow");
         }
 
         else {
@@ -47,7 +47,7 @@ class Queue{
 
 public class Single_Ended_Queue {
     public static void main(String[] args) {
-        Queue obj = new Queue(3);
+        queue obj = new queue(3);
 
     }
 }
