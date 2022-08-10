@@ -1,11 +1,11 @@
 package com.DSA;
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class Graphs {
-    public static void main(String[] args) {
+    public static void BFS (int target){
         ArrayList<Integer> list = new ArrayList<>(); // Implemented as Queue;
         int [] visited = {0, 0, 0, 0, 0, 0, 0};
-        int i = 5;
 
 //        Adjacency Matrix.
         int [][] connections ={
@@ -18,9 +18,9 @@ public class Graphs {
                 {0, 0, 0, 0, 1, 0, 0},
         };
 
-        System.out.print(i);
-        visited[i] = 1;
-        list.add(i);
+        System.out.print(target);
+        visited[target] = 1;
+        list.add(target);
         while (!list.isEmpty()){
             int node = list.remove(0);
             for (int j = 0; j < 7; j++) {
@@ -31,5 +31,31 @@ public class Graphs {
                 }
             }
         }
+    }
+
+    public static void DFS (int target, int [] visited){
+        visited[target] = 1;
+        System.out.print(target +" ");
+
+        int [][] connections ={
+                {0, 1, 1, 1, 0, 0, 0},
+                {1, 0, 1, 0, 0, 0, 0},
+                {1, 1, 0, 1, 1, 0, 0},
+                {1, 0, 1, 0, 1, 0, 0},
+                {0, 0, 1, 1, 0, 1, 1},
+                {0, 0, 0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 1, 0, 0},
+        };
+
+        for (int i = 0; i < visited.length; i++) {
+            if ( connections[target][i] == 1 && visited[i] == 0){
+                DFS(i, visited);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int [] visited = {0, 0, 0, 0, 0, 0, 0};
+        DFS (4, visited);
     }
 }

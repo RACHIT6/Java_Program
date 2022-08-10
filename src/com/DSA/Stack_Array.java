@@ -1,11 +1,11 @@
 package com.DSA;
 
-class Stack{
+class stack{
     int size;
     int top = -1;
     int [] arr;
 
-    Stack (int size){
+    stack (int size){
         this.size = size;
         this.arr = new int[this.size];
     }
@@ -19,7 +19,7 @@ class Stack{
 
     public void push (int val){
         if (this.isFull()){
-            System.out.println("Stack is Full");
+            System.out.println("stack is Full");
             return;
         }
 
@@ -29,7 +29,7 @@ class Stack{
 
     public int pop (){
         if (this.isEmpty()){
-            System.out.println("Stack is Empty");
+            System.out.println("stack is Empty");
             return -1;
         }
 
@@ -51,7 +51,7 @@ class Stack{
 
 public class Stack_Array {
     public static void main(String[] args) {
-        Stack obj = new Stack(5);
+        stack obj = new stack(5);
         obj.push(12);
         obj.push(12);
         obj.push(12);
