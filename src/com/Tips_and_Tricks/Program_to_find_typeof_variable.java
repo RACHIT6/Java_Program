@@ -8,7 +8,7 @@ public class Program_to_find_typeof_variable {
         int y = s.charAt (0) + 3; // add or subtract ascii value of character.
 
         System.out.println (y);
-//        Have to initialise to check the type.
+//        Have to initialise or make a object to check the type.
         System.out.println (((Object) x).getClass ().getSimpleName ());
         System.out.println (((Object) s).getClass ().getSimpleName ());
         System.out.println (arr.getClass ().getSimpleName ()); // No need of (Object) abbreviation in array
