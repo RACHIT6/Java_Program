@@ -5,7 +5,6 @@ import java.util.LinkedList;
 public class Merge_two_sorted_LinkedList {
     public static ListNode reverseList(ListNode head)
     {
-
         if (head.next == null)
             return head;
 
@@ -20,37 +19,26 @@ public class Merge_two_sorted_LinkedList {
         if (list1 == null){
             return list2;
         }
-
         if (list2 == null){
             return list1;
         }
-
         if (list1 == null && list2 == null){
             return null;
         }
 
         list1 = reverseList(list1);
-
         list2 = reverseList(list2);
-
         ListNode head = null;
-
         ListNode temp;
 
         while (list1 != null && list2 != null) {
             if (list1.val >= list2.val) {
-
                 temp = list1.next;
-
                 list1.next = head;
-
                 head = list1;
-
                 list1 = temp;
             }
-
             else {
-
                 temp = list2.next;
                 list2.next = head;
                 head = list2;
@@ -59,7 +47,6 @@ public class Merge_two_sorted_LinkedList {
         }
 
         while (list1 != null) {
-
             temp = list1.next;
             list1.next = head;
             head = list1;
@@ -67,11 +54,16 @@ public class Merge_two_sorted_LinkedList {
         }
 
         while (list2 != null) {
-
             temp = list2.next;
             list2.next = head;
             head = list2;
             list2 = temp;
+        }
+
+        ListNode h = head;
+        while (h != null){
+            System.out.println (h.val);
+            h = h.next;
         }
 
         return head;
