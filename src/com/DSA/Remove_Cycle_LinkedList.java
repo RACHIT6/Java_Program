@@ -31,5 +31,8 @@ public class Remove_Cycle_LinkedList {
         n2.next = n3;
         n3.next = n4;
         n4.next = null;
+
+        head = removeCycle (head);
+        head.Print ();
     }
 }
