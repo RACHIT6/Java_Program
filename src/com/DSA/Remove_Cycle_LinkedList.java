@@ -1,7 +1,7 @@
 package com.DSA;
 
 public class Remove_Cycle_LinkedList {
-    public static linkedList removeCycle (linkedList node){
+    public static void removeCycle (linkedList node){
         linkedList slow = node;
         linkedList fast = node;
 
@@ -12,12 +12,11 @@ public class Remove_Cycle_LinkedList {
             if ( slow == fast ){
                 System.out.println ("Cycle Removed");
                 fast.next = null;
-                return node;
+                return;
             }
         }
 
         System.out.println ("Cycle not found");
-        return node;
     }
 
     public static void main(String[] args) {
@@ -30,9 +29,9 @@ public class Remove_Cycle_LinkedList {
         head.next = n2;
         n2.next = n3;
         n3.next = n4;
-        n4.next = null;
+        n4.next = n4;
 
-        head = removeCycle (head);
+        removeCycle (head);
         head.Print ();
     }
 }
