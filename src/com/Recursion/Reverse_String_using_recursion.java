@@ -1,18 +1,15 @@
 package com.Recursion;
 
 public class Reverse_String_using_recursion {
-    public static void reverse (String str){
-        if ((str==null)||(str.length() <= 1))
-            System.out.println(str);
-        else
-        {
-//            System.out.print(str.charAt(str.length()-1));
-            System.out.println (str.substring(0,str.length()-1));
-            reverse(str.substring(0,str.length()-1));
-        }
+    public static String reverse (String s, String ans){
+       if ( s.length () == 0 )
+           return ans;
+
+       ans += s.charAt (s.length () - 1);
+       return reverse (s.substring (0, s.length () - 1), ans);
     }
 
     public static void main(String[] args) {
-        reverse ("Rachit");
+        System.out.println (reverse ("Rachit", ""));
     }
 }
