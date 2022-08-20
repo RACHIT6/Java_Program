@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Recursion;
 
 public class FInd_power_using_recursion {
     static int power(int a, int b){

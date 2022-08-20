@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Arrays_Question;
 
 import java.util.Scanner;
 

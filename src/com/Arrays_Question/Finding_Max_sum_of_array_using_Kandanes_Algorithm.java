@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Arrays_Question;
 
 public class Finding_Max_sum_of_array_using_Kandanes_Algorithm {
     public static int max_sum(int[] arr){

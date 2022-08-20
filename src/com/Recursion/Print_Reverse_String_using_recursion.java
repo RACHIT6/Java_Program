@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Recursion;
 
 import java.util.Scanner;
 

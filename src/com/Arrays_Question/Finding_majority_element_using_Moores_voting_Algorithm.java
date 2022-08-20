@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Arrays_Question;
 
 public class Finding_majority_element_using_Moores_voting_Algorithm {
     public static int Majority_Index(int[] arr){

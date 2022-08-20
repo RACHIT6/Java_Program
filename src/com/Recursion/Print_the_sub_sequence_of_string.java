@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Recursion;
 
 public class Print_the_sub_sequence_of_string {
     static void Sub_Seq(String s, int i, String current){

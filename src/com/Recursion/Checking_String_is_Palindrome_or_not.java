@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Recursion;
 
 public class Checking_String_is_Palindrome_or_not {
 //    Iterative approach

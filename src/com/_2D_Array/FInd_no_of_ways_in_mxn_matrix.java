@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com._2D_Array;
 
 public class FInd_no_of_ways_in_mxn_matrix {
     static int ways(int row, int column){
@@ -10,6 +10,6 @@ public class FInd_no_of_ways_in_mxn_matrix {
     }
 
     public static void main(String[] args) {
-        System.out.println(ways(1, 11));
+        System.out.println(ways(3, 11));
     }
 }

@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Recursion;
 
 public class Find_sum_of_n_number_using_recursion {
     static int sum(int n){

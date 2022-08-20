@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Recursion;
 
 public class Printing_table_of_given_number_using_recursion {
     public static void table(int n, int times){

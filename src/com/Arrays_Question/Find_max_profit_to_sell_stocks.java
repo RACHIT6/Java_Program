@@ -1,4 +1,4 @@
-package com.CompetitiveProgramming;
+package com.Arrays_Question;
 
 public class Find_max_profit_to_sell_stocks {
     public static int stock(int[] arr){
