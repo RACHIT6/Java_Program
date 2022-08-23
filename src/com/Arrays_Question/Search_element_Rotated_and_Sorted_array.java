@@ -32,8 +32,36 @@ public class Search_element_Rotated_and_Sorted_array {
         return false;
     }
 
+    public static boolean advanceBinarySearchRecursive (int [] arr, int low, int high, int key){
+        int mid = (low + high)/2;
+
+        if ( arr[mid] == key){
+            return true;
+        }
+
+        else if ( arr[low] < arr[mid] ){
+            if ( key >= arr[low] && key < arr[mid] ){
+                return advanceBinarySearchRecursive (arr, low, mid - 1, key);
+            }
+
+            else {
+                return advanceBinarySearchRecursive (arr, mid + 1, high, key);
+            }
+        }
+
+        else {
+            if ( key >= arr[mid] && key < arr[high] ){
+                return advanceBinarySearchRecursive (arr, mid + 1, high, key);
+            }
+
+            else {
+                return advanceBinarySearchRecursive (arr, low, high - 1, key);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int [] arr = {4, 5, 6, 1, 2, 3};
-        System.out.println (advanceBinarySearch (arr, 4));
+        System.out.println (advanceBinarySearchRecursive (arr, 0, arr.length - 1, 4));
     }
 }

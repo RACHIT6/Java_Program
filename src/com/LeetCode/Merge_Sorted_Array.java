@@ -1,4 +1,4 @@
-package com.Arrays_Question;
+package com.LeetCode;
 
 /*In this Question we have to merge two sorted array nums1[] and nums2[].
 * 1. nums1[] length is m + n and nums2 length is n.
