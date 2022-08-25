@@ -19,10 +19,9 @@ public class Find_intersection_of_two_array {
             }
         }
 
-        System.out.println (map);
         for (int n : nums2){
             Integer count = map.get(n);
-            if ( count >= 1 ){
+            if ( map.containsKey (n) && count >= 1 ){
                 list.add (n);
                 map.put (n, count - 1);
             }
