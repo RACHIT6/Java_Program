@@ -1,4 +1,4 @@
-package com.Arrays_Question;
+package com.LeetCode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
