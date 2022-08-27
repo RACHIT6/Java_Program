@@ -26,6 +26,10 @@ public class Find_the_subArray_whose_sum_is_equal_to_given_sum {
             map.put (currSum, i);
         }
 
+        if ( end == -1 ){
+            return new int[]{-1};
+        }
+
         int j = 0;
         int [] res = new int[(end - start + 1)];
         for (int i = start; i <= end; i++) {
@@ -37,6 +41,6 @@ public class Find_the_subArray_whose_sum_is_equal_to_given_sum {
 
     public static void main(String[] args) {
         int [] arr = {10, 15, -5, 15, -10, 5};
-        System.out.println (Arrays.toString (sumSubArray (arr, -10)));
+        System.out.println (Arrays.toString (sumSubArray (arr, -37)));
     }
 }
