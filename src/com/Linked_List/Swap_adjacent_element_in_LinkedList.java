@@ -27,6 +27,31 @@ public class Swap_adjacent_element_in_LinkedList {
 
         return head;
     }
+    public static ListNode swapPairs2(ListNode head) {
+        if ( head.next == null ){
+            return head;
+        }
+
+        ListNode node = head;
+        ListNode nextNode = node.next;
+
+        while ( node.next != null ){
+            int temp = node.val;
+            node.val = nextNode.val;
+            nextNode.val = temp;
+
+            if ( node.next.next != null ){
+                node = node.next.next;
+            }
+
+            else {
+                node = node.next;
+            }
+            nextNode = node.next;
+        }
+
+        return head;
+    }
 
     public static void main(String[] args) {
         ListNode head = new ListNode (1);
@@ -40,8 +65,9 @@ public class Swap_adjacent_element_in_LinkedList {
         n2.next = n3;
         n3.next = n4;
         n4.next = n5;
+        n5.next = n6;
 
-        swapPairs (head);
+        swapPairs2 (head);
         ListNode.print (head);
     }
 }
