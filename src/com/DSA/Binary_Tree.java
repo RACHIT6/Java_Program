@@ -1,5 +1,8 @@
 package com.DSA;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Tree {
     int data;
     Tree left;
@@ -43,8 +46,31 @@ class Tree {
             postOrder(root.right);
             System.out.print(root.data +" ");
         }
-    }
+    } public void levelOrder(Tree root){
+        Queue<Tree> queue = new LinkedList<> ();
+        queue.add (root);
+        queue.add (null);
 
+        while ( !queue.isEmpty () ){
+            Tree currNode = queue.remove ();
+            if ( currNode == null ){
+                System.out.println ();
+                if ( queue.isEmpty () )
+                    break;
+                else
+                    queue.add (null);
+            }
+
+            else {
+                System.out.print (currNode.data +" ");
+                if ( currNode.left != null )
+                    queue.add (currNode.left);
+
+                if ( currNode.right != null )
+                    queue.add (currNode.right);
+            }
+        }
+    }
     public int countNode (Tree node){
         if (node == null){
             return 0;
@@ -178,10 +204,9 @@ public class Binary_Tree {
         n3.right = n6;
 
 //        System.out.println(root.heightNode(root));
-        root.inOrder(root);
         System.out.println();
-        root.deleteNode(root, 20);
-        root.inOrder(root);
+//        root.deleteNode(root, 20);
+        root.levelOrder (root);
 //        Tree res = root.Search(root, 20);
 //        System.out.println(res.data);
     }
