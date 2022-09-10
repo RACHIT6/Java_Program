@@ -1,45 +1,43 @@
 package com.Heap_Data_Structure;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 public class Insertion_and_deletion_in_Max_heap {
-    public static int insert(int[] arr , int n , int target){
-        arr[n] = target;
-        n++;
-        int i = n;
+    public static void insert (ArrayList<Integer> arr, int val){
+        arr.add (val);
+
+        int i = arr.size ();
         while ( i > 1 ){
-            if ( arr[i/2 - 1] < arr[i - 1] ){
-                int temp = arr[i/2 - 1];
-                arr[i/2 - 1] = arr[i - 1];
-                arr[i - 1] = temp;
-
-                i = i/2;
+            if ( arr.get (i/2 - 1) < arr.get (i - 1)){
+                Collections.swap (arr, i/2 - 1, i - 1);
+                i /= 2;
             }
 
-            else {
-                return n;
-            }
+            else
+                return;
         }
-
-        return n;
     }
 
-    public static int delete (int [] arr, int n){
-        arr[0] = arr[n - 1];
-        n--;
+    public static void delete (ArrayList<Integer> arr){
+        Collections.swap (arr, 0, arr.size () - 1);
+        arr.remove (arr.size () - 1);
         int i = 1;
-        while (i < n){
+        while (i < arr.size ()){
             int left = 2*i - 1;
             int right = 2*i;
 
-            int index = arr[left] > arr[right] ? left : right;
-            if ( arr[index] > arr[i - 1]){
-                int temp = arr[index];
-                arr[index] = arr[i - 1];
-                arr[i - 1] = temp;
+            if ( left < arr.size () && right < arr.size () ){
+                int index = arr.get (left) > arr.get (right) ? left : right;
+                if ( arr.get (index) > arr.get (i - 1)){
+                    Collections.swap (arr, index, i - 1);
+                }
+                i = index;
             }
-            i = index;
-        }
 
-        return n;
+            else
+                break;
+        }
     }
 
     public static void print (int [] arr, int n){
@@ -51,17 +49,15 @@ public class Insertion_and_deletion_in_Max_heap {
     }
 
     public static void main(String[] args) {
-        int [] arr = new int[10];
-        arr[0] = 10;
-        arr[1] = 7;
-        arr[2] = 8;
-        arr[3] = 4;
-        arr[4] = 5;
-        arr[5] = 6;
-        int n = 6;
-        print (arr, n);
-        n = insert (arr, n, 90);
-        n = insert (arr, n, 9);
-        print (arr, n);
+        ArrayList<Integer> list = new ArrayList<> ();
+        list.add (50);
+        list.add (20);
+        list.add (30);
+        list.add (5);
+        list.add (10);
+        insert (list, 100);
+        delete (list);
+        delete (list);
+        System.out.println (list);
     }
 }
