@@ -1,0 +1,16 @@
+What is Heap?
+heap is a complete binary tree that is represented by array.
+
+NOTE - the heap should be complete binary tree, and we can't leave any space empty.
+
+**IMPORTANT**
+parent = i/2, where i is the index of child element
+left child = 2 * i, where i is the index of parent node
+right child = (2 * i) + 1, where i is the index of parent node
+
+there are two types of heap:
+1. MIN Heap
+2. MAX Heap
+
+MIN Heap - the root is the smallest element of tree and in each subtree child nodes are greater than root node.
+MAX Heap - the root is the largest element of tree and in each subtree child nodes are smaller than root node.
