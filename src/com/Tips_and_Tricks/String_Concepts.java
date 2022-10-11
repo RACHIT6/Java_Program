@@ -12,7 +12,7 @@ public class String_Concepts {
 
         System.out.println (s1 == s2); /* true because it checks the reference in string pool, it is created in stack and shared same reference */
 
-        System.out.println (s2 == s3); /* both are false because object are different, one is created in stack and one is created in heap */
+        System.out.println (s2.compareTo (s3)); /* both are false because object are different, one is created in stack and one is created in heap */
         System.out.println (s4 == s3); /* both are false because object are different, both are created in heap */
     }
 }
