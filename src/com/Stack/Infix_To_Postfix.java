@@ -28,7 +28,6 @@ public class Infix_To_Postfix {
         Stack<Character> s = new Stack<> ();
         StringBuilder res = new StringBuilder ();
 
-
         int i = 0;
         while ( i < str.length () ) {
             if ( isOperator (str.charAt (i)) ){
