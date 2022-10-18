@@ -19,26 +19,19 @@ class CQueue {
     }
 
     public void push (int n){
-        if ( s2.size () >= this.capacity){
+        if ( s1.size () >= this.capacity || s2.size () >= this.capacity){
             System.out.println ("Stack is Full");
         }
 
         else {
-            if ( !s2.isEmpty () ){
-                while ( !s2.isEmpty () ){
-                    s1.push (s2.pop ());
-                }
-
-                s1.push (n);
-
-                while ( !s1.isEmpty () ){
-                    s2.push (s1.pop ());
-                }
+            while ( !s2.isEmpty () ){
+                s1.push (s2.pop ());
             }
 
-            else {
-                s2.push (n);
-            }
+            s1.push (n);
+
+            while ( !s1.isEmpty () )
+                s2.push (s1.pop ());
         }
     }
 
@@ -46,6 +39,7 @@ class CQueue {
         if ( s2.isEmpty () ){
             return -1;
         }
+
         return s2.pop ();
     }
 
@@ -60,13 +54,7 @@ public class Implement_Queue_using_Two_Stack {
         q.push (1);
         q.push (2);
         q.push (3);
-        q.push (3);
-        q.push (3);
-        q.push (3);
-        q.push (3);
-        q.push (3);
-        q.push (3);
-        q.push (3);
-        System.out.println (q.size ());
+
+        System.out.println (q.pop ());
     }
 }
