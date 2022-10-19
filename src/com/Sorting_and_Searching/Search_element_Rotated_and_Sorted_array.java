@@ -1,4 +1,4 @@
-package com.Arrays_Question;
+package com.Sorting_and_Searching;
 
 public class Search_element_Rotated_and_Sorted_array {
     public static boolean advanceBinarySearch (int [] arr, int key){
