@@ -166,7 +166,7 @@ class linkedList{
     }
 }
 
-public class Singlee_Linked_List {
+public class  Singlee_Linked_List {
     public static void main(String[] args) {
         linkedList head = new linkedList(3);
         linkedList n2 = new linkedList(21);

@@ -70,7 +70,8 @@ public class Next_Greatest_Node_in_LinkedList {
 
         head.next = n2;
         n2.next = n3;
+        ListNode.print (head);
 
-        System.out.println (Arrays.toString (nextLargerNodes (head)));
+//        System.out.println (Arrays.toString (nextLargerNodes (head)));
     }
 }
