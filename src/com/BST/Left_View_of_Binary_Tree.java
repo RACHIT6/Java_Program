@@ -5,75 +5,28 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Left_View_of_Binary_Tree {
-    public static void leftView (TreeNode node){
-        Queue<TreeNode> q = new LinkedList<> ();
-        ArrayList<Integer> list = new ArrayList<> ();
-        q.offer (node);
-        list.add (node.val);
+    public static void leftViewUtil (TreeNode node, ArrayList<Integer> list, int level){
+        if ( node == null )
+            return;
+        if ( level == list.size () )
+            list.add (level, node.val);
 
-        while ( !q.isEmpty () ){
-            if ( q.peek () == null ){
-                q.poll ();
-            }
-
-            else {
-                if ( q.peek ().left != null && q.peek ().right != null ){
-                    q.offer (q.peek ().left);
-                    q.offer (q.peek ().right);
-                    list.add (q.peek ().left.val);
-                }
-                else if (  q.peek ().left != null ) {
-                    q.offer (q.peek ().left);
-                    list.add (q.peek ().left.val);
-                }
-                else if (  q.peek ().right != null ) {
-                    q.offer (q.peek ().right);
-                    list.add (q.peek ().right.val);
-                }
-
-                q.poll ();
-            }
-        }
-
-        System.out.println (list);
+        leftViewUtil (node.left, list, level + 1);
+        leftViewUtil (node.right, list, level + 1);
     }
 
-    public static void rightView (TreeNode node){
-        Queue<TreeNode> q = new LinkedList<> ();
+    public static void leftView (TreeNode node) {
         ArrayList<Integer> list = new ArrayList<> ();
-        q.offer (node);
-        list.add (node.val);
 
-        while ( !q.isEmpty () ){
-            if ( q.peek () == null ){
-                q.poll ();
-            }
-
-            else {
-                if ( q.peek ().left != null && q.peek ().right != null ){
-                    q.offer (q.peek ().left);
-                    q.offer (q.peek ().right);
-                    list.add (q.peek ().right.val);
-                }
-                else if (  q.peek ().right != null ) {
-                    q.offer (q.peek ().right);
-                    list.add (q.peek ().right.val);
-                }
-                else if (  q.peek ().left != null ) {
-                    q.offer (q.peek ().left);
-                    list.add (q.peek ().left.val);
-                }
-
-                q.poll ();
-            }
-        }
-
-        System.out.println (list);
+        leftViewUtil (node, list, 0);
+        for (int n : list)
+            System.out.print (n + " ");
     }
 
     public static void main ( String[] args ) {
         TreeNode root = new TreeNode (4);
         root.left = new TreeNode (3);
+        root.left.left = new TreeNode (15);
         root.right = new TreeNode (2);
         root.right.left = new TreeNode (1);
         root.right.right = new TreeNode (7);
@@ -81,6 +34,5 @@ public class Left_View_of_Binary_Tree {
         root.right.right.right = new TreeNode (5);
 
         leftView (root);
-        rightView (root);
     }
 }
