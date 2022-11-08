@@ -1,4 +1,4 @@
-package com.BST;
+package com.Binary_Tree;
 
 public class Count_node_in_complete_Binary_Tree {
     public static int countNodes(TreeNode root) {

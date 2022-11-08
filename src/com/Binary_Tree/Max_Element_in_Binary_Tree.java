@@ -1,4 +1,4 @@
-package com.BST;
+package com.Binary_Tree;
 
 public class Max_Element_in_Binary_Tree {
     public static int max (TreeNode node){

@@ -1,6 +1,4 @@
-package com.BST;
-
-import com.sun.source.tree.Tree;
+package com.Binary_Tree;
 
 public class max_depth_of_binary_tree {
     public static int depth (TreeNode root){

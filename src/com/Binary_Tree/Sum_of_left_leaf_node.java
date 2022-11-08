@@ -1,53 +1,44 @@
-package com.BST;
+package com.Binary_Tree;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Level_Order_Traversal {
-    public static void levelTraversalR (Queue<TreeNode> q){
-        if ( q.isEmpty () )
-            return;
-
-        if ( q.peek () != null ){
-            TreeNode popNode = q.poll ();
-            System.out.print (popNode.val+" ");
-            q.offer (popNode.left);
-            q.offer (popNode.right);
-        }
-
-        else
-            q.poll ();
-
-        levelTraversalR (q);
-    }
-
-    public static void levelTraversal (TreeNode node){
+public class Sum_of_left_leaf_node {
+    public static int sumOfLeftLeaves(TreeNode root) {
         Queue<TreeNode> q = new LinkedList<> ();
-        q.offer (node);
+        int sum = 0;
+        q.offer (root);
         q.offer (null);
 
         while ( !q.isEmpty () ){
             if ( q.peek () == null ){
-                System.out.println ();
                 q.poll ();
             }
 
             else {
                 if ( q.peek ().left != null && q.peek ().right != null ){
+                    if ( q.peek ().left.left == null && q.peek ().left.right == null)
+                        sum += q.peek ().left.val;
+
                     q.offer (q.peek ().left);
                     q.offer (q.peek ().right);
                     q.offer (null);
                 }
                 else if (  q.peek ().left != null ) {
+                    if ( q.peek ().left.left == null && q.peek ().left.right == null)
+                        sum += q.peek ().left.val;
+
                     q.offer (q.peek ().left);
                 }
                 else if (  q.peek ().right != null ) {
                     q.offer (q.peek ().right);
                 }
 
-                System.out.print (q.poll ().val + " ");
+                q.poll ();
             }
         }
+
+        return sum;
     }
 
     public static void main ( String[] args ) {
@@ -60,9 +51,6 @@ public class Level_Order_Traversal {
         root.right.right.left = new TreeNode (6);
         root.right.right.right = new TreeNode (5);
 
-        Queue<TreeNode> q = new LinkedList<> ();
-        q.add (root);
-//        levelTraversalR (q);
-        levelTraversal (root);
+        System.out.println (sumOfLeftLeaves (root));
     }
 }

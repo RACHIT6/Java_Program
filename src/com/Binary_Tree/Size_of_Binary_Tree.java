@@ -1,4 +1,4 @@
-package com.BST;
+package com.Binary_Tree;
 
 public class Size_of_Binary_Tree {
     public static int size (TreeNode node) {

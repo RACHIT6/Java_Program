@@ -1,8 +1,6 @@
-package com.BST;
+package com.Binary_Tree;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class Left_View_of_Binary_Tree {
     public static void leftViewUtil (TreeNode node, ArrayList<Integer> list, int level){

@@ -1,4 +1,4 @@
-package com.BST;
+package com.Binary_Tree;
 
 public class TreeNode {
     int val;

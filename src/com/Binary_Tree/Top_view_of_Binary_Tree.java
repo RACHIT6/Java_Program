@@ -1,4 +1,4 @@
-package com.BST;
+package com.Binary_Tree;
 
 import java.util.HashMap;
 import java.util.Map;

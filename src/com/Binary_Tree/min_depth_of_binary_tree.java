@@ -1,4 +1,4 @@
-package com.BST;
+package com.Binary_Tree;
 
 public class min_depth_of_binary_tree {
     public static int depth (TreeNode root){

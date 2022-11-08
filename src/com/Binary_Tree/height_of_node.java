@@ -1,6 +1,4 @@
-package com.BST;
-
-import com.Linked_List.ListNode;
+package com.Binary_Tree;
 
 public class height_of_node {
     public static int nodeHeight (TreeNode node){
@@ -8,9 +6,7 @@ public class height_of_node {
             return 0;
         }
 
-        int left = nodeHeight (node.left) + 1;
-        int right = nodeHeight (node.right) + 1;
-        return Math.max (left, right);
+        return Math.max (nodeHeight (node.left), nodeHeight (node.right)) + 1;
     }
 
     public static void main (String[] args) {
