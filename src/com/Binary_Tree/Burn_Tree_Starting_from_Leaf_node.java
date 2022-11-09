@@ -26,9 +26,6 @@ public class Burn_Tree_Starting_from_Leaf_node {
         int lh = burn (node.left, target, ld);
         int rh = burn (node.right, target, rd);
 
-        System.out.println (ld.d);
-        System.out.println (rd.d);
-
         if ( ld.d != -1 ){
             ans = Math.max (ans, ld.d + rh + 1);
             d.d = ld.d + 1;
