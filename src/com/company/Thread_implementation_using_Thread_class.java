@@ -1,5 +1,6 @@
 package com.company;
 
+
 class myThread1 extends Thread {
     public int n;
 
