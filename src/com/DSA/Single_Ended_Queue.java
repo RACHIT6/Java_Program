@@ -48,6 +48,6 @@ class queue{
 public class Single_Ended_Queue {
     public static void main(String[] args) {
         queue obj = new queue(3);
-
+        obj.enqueue (3);
     }
 }

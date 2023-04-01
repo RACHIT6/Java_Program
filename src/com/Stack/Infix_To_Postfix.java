@@ -81,7 +81,7 @@ public class Infix_To_Postfix {
     }
 
     public static void main ( String[] args ) {
-        String s = "A*(B+C*(D+E))/(F*(G+H))";
+        String s = "a+b*c-d";
         System.out.println (conversion (s));
     }
 }

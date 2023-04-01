@@ -8,7 +8,7 @@ class circularQueue{
 
     circularQueue (int size){
         this.r = this.f = 0;
-        this.size = size;
+        this.size = size + 1;
         this.arr = new int[this.size];
     }
 
@@ -52,13 +52,11 @@ public class Circular_Queue {
         obj.enQueue(1);
         obj.enQueue(1);
         obj.enQueue(1);
+        obj.enQueue(1);
 
-        obj.deQueue();
-        obj.deQueue();
-        obj.deQueue();
-
-        obj.enQueue(1);
-        obj.enQueue(1);
-        obj.enQueue(1);
+        obj.deQueue ();
+        obj.deQueue ();
+        obj.deQueue ();
+        obj.deQueue ();
     }
 }

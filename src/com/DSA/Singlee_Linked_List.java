@@ -187,7 +187,7 @@ public class  Singlee_Linked_List {
 
 
         head.Print();
-        System.out.println(head.Size());
+//        System.out.println(head.Size());
 //        head = head.pop();
 //        head.Print();
     }
