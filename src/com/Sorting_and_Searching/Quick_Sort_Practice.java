@@ -30,14 +30,14 @@ public class Quick_Sort_Practice {
     public static void quickSort (int [] arr, int low, int high){
         if ( low < high ){
             int index = partition (arr, low, high);
-            System.out.println (Arrays.toString (arr));
+//            System.out.println (Arrays.toString (arr));
             quickSort (arr, low, index - 1);
             quickSort (arr, index + 1, high);
         }
     }
 
     public static void main (String[] args) {
-        int [] arr = {5, 3, 2, 6, 4, 1, 3, 7};
+        int [] arr = {2, 24, 6, 7, 11, 8, 22, 4, 5, 10, 19, 28, 78};
         quickSort (arr, 0, arr.length - 1);
         System.out.println (Arrays.toString (arr));
     }
